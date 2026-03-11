@@ -34,8 +34,8 @@ app.get("/api/health", (req, res) =>
 );
 
 // ── Iniciar servidor PRIMERO ─────────────────────────────────────
-app.listen(PORT, () => {
-  console.log(`🚀 Backend en http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 Backend en http://0.0.0.0:${PORT}`);
 });
 
 // ── Conexión MongoDB (en paralelo) ───────────────────────────────
