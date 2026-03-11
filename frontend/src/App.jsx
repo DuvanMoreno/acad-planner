@@ -413,7 +413,7 @@ function PhaseCard({ phase, subject, onEditPhase, onDeletePhase, onAddItem, onEd
         {phase.items.length===0&&<div style={{textAlign:"center",padding:"18px",color:"rgba(255,255,255,0.2)",fontSize:"12px",fontStyle:"italic"}}>Sin actividades aún</div>}
         {phase.items.map((item,idx)=>(
           <div key={item._id||item.id} style={{background:overIdx===idx&&dragIdx!==null&&dragIdx!==idx?"rgba(255,255,255,0.04)":"transparent",borderRadius:"8px",transition:"background 0.15s"}}>
-            <ItemRow item={item} idx={idx} total={phase.items.length} color={subject.color}
+            <ItemRow item={item} idx={idx} total={phase.items.length} color={subject.color} phaseStart={phase.start}
               onEdit={onEditItem} onDelete={id=>onDeleteItem(phase._id||phase.id,id)}
               onToggle={id=>onToggle(phase._id||phase.id,id)}
               onDragStart={(e,i)=>setDragIdx(i)} onDragOver={(e,i)=>setOverIdx(i)} onDrop={hdDrop}
