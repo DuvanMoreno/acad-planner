@@ -262,7 +262,7 @@ function SemBar({ subject, onAddPhase, onEditPhase }) {
 // ═══════════════════════════════════════════════════════════════════
 //  ITEM ROW
 // ═══════════════════════════════════════════════════════════════════
-function ItemRow({ item, idx, total, color, onEdit, onDelete, onToggle, onDragStart, onDragOver, onDrop, isBeingDragged }) {
+function ItemRow({ item, idx, total, color, phaseStart, onEdit, onDelete, onToggle, onDragStart, onDragOver, onDrop, isBeingDragged }) {
   const [hov, setHov] = useState(false);
   const isDeadline = item.type==="deadline";
   const startStr = (item.dateStart && item.dateStart.trim()) ? item.dateStart : item.dateEnd;
