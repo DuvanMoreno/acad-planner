@@ -265,7 +265,7 @@ function SemBar({ subject, onAddPhase, onEditPhase }) {
 function ItemRow({ item, idx, total, color, phaseStart, onEdit, onDelete, onToggle, onDragStart, onDragOver, onDrop, isBeingDragged }) {
   const [hov, setHov] = useState(false);
   const isDeadline = item.type==="deadline";
-  const startStr = (item.dateStart && item.dateStart.trim()) ? item.dateStart : item.dateEnd;
+  const startStr = (item.dateStart && item.dateStart.trim()) ? item.dateStart : (phaseStart || item.dateEnd);
   const iS = pd(startStr);
   const act = iS ? TODAY>=iS&&TODAY<=pd(item.dateEnd) : false;
   const over = isDn(item.dateEnd)&&!item.done;
