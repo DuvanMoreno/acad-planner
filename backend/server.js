@@ -33,16 +33,17 @@ app.get("/api/health", (req, res) =>
   res.json({ status: "ok", time: new Date() })
 );
 
-// ── Conexión MongoDB ─────────────────────────────────────────────
+// ── Iniciar servidor PRIMERO ─────────────────────────────────────
+app.listen(PORT, () => {
+  console.log(`🚀 Backend en http://localhost:${PORT}`);
+});
+
+// ── Conexión MongoDB (en paralelo) ───────────────────────────────
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("✅ Conectado a MongoDB");
-    app.listen(PORT, () =>
-      console.log(`🚀 Backend en http://localhost:${PORT}`)
-    );
   })
   .catch(err => {
     console.error("❌ MongoDB error:", err.message);
-    process.exit(1);
   });
