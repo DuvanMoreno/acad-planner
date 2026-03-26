@@ -92,10 +92,9 @@ function AuthScreen({ onAuth }) {
         background:"radial-gradient(circle,rgba(42,157,143,0.08) 0%,transparent 70%)",pointerEvents:"none"}}/>
       <div style={{width:"100%",maxWidth:"400px",position:"relative"}}>
         <div style={{textAlign:"center",marginBottom:"36px"}}>
-          <div style={{fontSize:"32px",marginBottom:"12px"}}>📚</div>
-          <h1 style={{margin:0,fontSize:"22px",fontWeight:"400",letterSpacing:"1px",color:"#fff"}}>Academic Planner</h1>
-          <p style={{margin:"8px 0 0",fontSize:"12px",color:"rgba(255,255,255,0.3)",letterSpacing:"2px",textTransform:"uppercase"}}>UNAD · 2026</p>
-        </div>
+        <img src="/logo.svg" alt="Academic Planner" style={{width:"210px",marginBottom:"10px"}} />
+        <p style={{margin:"8px 0 0",fontSize:"12px",color:"rgba(255,255,255,0.3)",letterSpacing:"2px",textTransform:"uppercase"}}>UNAD · 2026</p>
+      </div>
         <div style={{background:"#111119",border:"1px solid rgba(255,255,255,0.09)",borderRadius:"14px",padding:"32px 28px"}}>
           <div style={{display:"flex",gap:"4px",marginBottom:"28px",background:"rgba(255,255,255,0.04)",borderRadius:"8px",padding:"4px"}}>
             {["login","register"].map(m => (
