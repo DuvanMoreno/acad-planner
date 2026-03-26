@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { api, auth, token, exportToJSON, importFromJSON } from "./api.js";
+import logoSrc from "./logo.svg";
 
 // ═══════════════════════════════════════════════════════════════════
 //  THEME
@@ -92,7 +93,7 @@ function AuthScreen({ onAuth }) {
         background:"radial-gradient(circle,rgba(42,157,143,0.08) 0%,transparent 70%)",pointerEvents:"none"}}/>
       <div style={{width:"100%",maxWidth:"400px",position:"relative"}}>
         <div style={{textAlign:"center",marginBottom:"36px"}}>
-        <img src="/logo.svg" alt="Academic Planner" style={{width:"210px",marginBottom:"10px"}} />
+        <img src={logoSrc} alt="Academic Planner" style={{width:"210px",marginBottom:"10px"}} />        
         <p style={{margin:"8px 0 0",fontSize:"12px",color:"rgba(255,255,255,0.3)",letterSpacing:"2px",textTransform:"uppercase"}}>UNAD · 2026</p>
       </div>
         <div style={{background:"#111119",border:"1px solid rgba(255,255,255,0.09)",borderRadius:"14px",padding:"32px 28px"}}>
