@@ -711,7 +711,7 @@ function TodayView({ subjects, onToggleDone, th }) {
             {!item.done && (
               <span style={{fontSize:"10px",fontWeight:"700",
                 color: overdue?"#E63946":dl===0?"#E63946":dl<=2?"#F4A261":dl<=5?"#f9c784":th.textFaint}}>
-                {overdue ? `Venció hace ${Math.abs(dl)}d` : dl===0 ? "⚡ Vence hoy" : `${dl}d restantes`}
+                {overdue ? `Venció hace ${Math.floor(Math.abs(dl))}d` : dl<1 ? `⚡ ${Math.round(dl*24)}h restantes` : `${Math.floor(dl)}d restantes`}
               </span>
             )}
           </div>
