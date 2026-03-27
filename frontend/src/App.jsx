@@ -416,7 +416,7 @@ function ItemRow({ item, idx, total, color, phaseStart, onEdit, onDelete, onTogg
             <Bar v={p} color={isDeadline?"#E63946":color} h={3} th={th}/>
             <div style={{display:"flex",justifyContent:"space-between",fontSize:"9px",color:th.textFaint,marginTop:"3px"}}>
               <span>{Math.round(p)}% del tiempo</span>
-              {act&&dl>0&&<span ...>{dl>=1 ? `${Math.floor(dl)}d restantes` : `${Math.round(dl*24)}h restantes`}</span>}              
+              {act&&dl>0&&<span style={{color:dl<=2?"#E63946":dl<=5?"#F4A261":th.textFaint}}>{dl>=1 ? `${Math.floor(dl)}d restantes` : `${Math.round(dl*24)}h restantes`}</span>}            
               {over&&!item.done&&<span style={{color:"#E63946"}}>Fecha vencida</span>}
             </div>
           </div>
