@@ -640,7 +640,7 @@ function TodayView({ subjects, onToggleDone, th }) {
           if (!iS || !iE) return false;
           return (TODAY >= iS && TODAY <= iE) || (TODAY > iE && !item.done);
         })
-        .map(item => ({ item, phase, subject, overdue: TODAY > pd(item.dateEnd) && !item.done }))
+        .map(item => ({ item, phase, subject, overdue: TODAY > pde(item.dateEnd) && !item.done }))
     )
   );
 
