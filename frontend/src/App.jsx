@@ -469,14 +469,14 @@ function PhaseCard({ phase, subject, onEditPhase, onDeletePhase, onAddItem, onEd
               <span>{fd(phase.start)} → {fd(phase.end)}</span>
               <span style={{color:subject.color}}>{phase.points} pts</span>
               <span>{doneCount}/{phase.items.length} completadas</span>
-              {act&&<span style={{color:dl<=3?"#E63946":dl<=7?"#F4A261":subject.color}}>⏱ {dl}d restantes</span>}
+              {act&&<span style={{color:dl<=3?"#E63946":dl<=7?"#F4A261":subject.color}}>⏱ {dl>=1?`${Math.floor(dl)}d`:dl>0?`${Math.round(dl*24)}h`:"vence hoy"} restantes</span>}
             </div>
           </div>
         </div>
         {/* Right: progress + actions — stop propagation so clicks on buttons don't toggle collapse */}
         <div style={{display:"flex",alignItems:"center",gap:"10px"}} onClick={e=>e.stopPropagation()}>
           <div style={{textAlign:"right",minWidth:"75px"}}>
-            <div style={{fontSize:"11px",color:subject.color,fontWeight:"700",marginBottom:"5px"}}>{p}%</div>
+            <div style={{fontSize:"11px",color:subject.color,fontWeight:"700",marginBottom:"5px"}}>{Math.round(p)}%</div>
             <Bar v={p} color={subject.color} h={4} th={th}/>
           </div>
           <button onClick={()=>onEditPhase(phase)} style={{...BG,padding:"5px 9px",fontSize:"12px"}}>✏️</button>
