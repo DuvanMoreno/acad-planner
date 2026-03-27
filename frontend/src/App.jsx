@@ -720,7 +720,7 @@ function TodayView({ subjects, onToggleDone, th }) {
         {!item.done && (
           <div style={{marginLeft:"27px"}}>
             <Bar v={p} color={overdue?"#E63946":subject.color} h={3} th={th}/>
-            <div style={{fontSize:"9px",color:th.textFaint,marginTop:"3px"}}>{p}% del tiempo transcurrido</div>
+            <div style={{fontSize:"9px",color:th.textFaint,marginTop:"3px"}}>{Math.round(p)}% del tiempo transcurrido</div>
           </div>
         )}
         {item.done && <div style={{marginLeft:"27px",fontSize:"9px",letterSpacing:"1.5px",color:"#4CAF5060",textTransform:"uppercase"}}>● Completada</div>}
