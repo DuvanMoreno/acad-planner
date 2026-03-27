@@ -175,6 +175,13 @@ function pde(s) {
 
 function fd(s) { if (!s) return "—"; const d=pd(s); return d?d.toLocaleDateString("es-CO",{day:"numeric",month:"short"}).toUpperCase():"—"; }
 function dBet(a,b) { if(!a||!b) return 0; return (b-a)/86400000; }
+function pde(s) {
+  if (!s || typeof s !== "string" || s.trim() === "") return null;
+  const parts = s.split("-").map(Number);
+  if (parts.length !== 3 || parts.some(isNaN)) return null;
+  const [y,m,d] = parts;
+  return new Date(y, m-1, d, 23, 59, 59);
+}
 function pctTime(s,e) {
   const ds=pd(s), de=pde(e);
   if(!ds||!de) return 0;
@@ -184,7 +191,7 @@ function pctTime(s,e) {
 function dLeft(s) { const d=pde(s); return d?dBet(TODAY,d):0; }
 function uid() { return "_"+Math.random().toString(36).slice(2,10); }
 function isAct(s,e) { const ds=pd(s),de=pde(e); return !!(ds&&de&&TODAY>=ds&&TODAY<=de); }
-function isDn(e) { const de=pde(e); return !!(de&&TODAY>de); }
+function isDn(e)    { const de=pde(e); return !!(de&&TODAY>de); }
 
 const SCOL = ["#E63946","#2A9D8F","#F4A261","#7B2D8B","#457B9D","#E76F51","#264653","#A8DADC"];
 const TCFG = {
