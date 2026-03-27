@@ -174,7 +174,7 @@ function pde(s) {
 }
 
 function fd(s) { if (!s) return "—"; const d=pd(s); return d?d.toLocaleDateString("es-CO",{day:"numeric",month:"short"}).toUpperCase():"—"; }
-function dBet(a,b) { if(!a||!b) return 0; return Math.round((b-a)/86400000); }
+function dBet(a,b) { if(!a||!b) return 0; return (b-a)/86400000; }
 function pctTime(s,e) {
   const ds=pd(s), de=pde(e);
   if(!ds||!de) return 0;
